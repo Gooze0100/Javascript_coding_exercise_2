@@ -9,56 +9,88 @@
         <div>All</div>
       </div>
     </div>
-    <div class="inner-main-block-2">
+    <div class="inner-main-block-2" *ngFor="let item of mainFilter">
       <div class="img-block">
-        <img src="" alt="" />
+        <img
+          src="../../assets/img/{{ item.img }}.png"
+          alt="{{ item.img.splice(3) }}"
+        />
       </div>
       <div class="text-block">
         <div class="tooltip">
-          <span class="tooltiptext">Tooltip text</span>
+          <span class="tooltiptext">{{ item.tooltip }}</span>
+        </div>
+        <div class="text">
+          {{ item.text }}
         </div>
       </div>
     </div>
     <div class="inner-main-block-3">
       <div class="text-block">
-        <div>More</div>
         <div>
-          <svg
-            class="svg-image"
-            role="img"
-            style="
-              width: inherit;
-              height: inherit;
-              line-height: inherit;
-              color: inherit;
-            "
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 200 200"
-          >
-            <path
-              d="M100 132.5c-3.873 0 .136 2.376-64.801-51.738l9.603-11.523L100 115.237l55.199-45.999l9.603 11.523C99.806 134.924 103.855 132.5 100 132.5z"
-            ></path>
-          </svg>
+          <div class="text">More</div>
+          <div>
+            <svg
+              class="svg-image"
+              role="img"
+              style="
+                width: inherit;
+                height: inherit;
+                line-height: inherit;
+                color: inherit;
+              "
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 200 200"
+            >
+              <path
+                d="M100 132.5c-3.873 0 .136 2.376-64.801-51.738l9.603-11.523L100 115.237l55.199-45.999l9.603 11.523C99.806 134.924 103.855 132.5 100 132.5z"
+              ></path>
+            </svg>
+          </div>
+          <div>
+            <svg
+              class="svg-image"
+              role="img"
+              style="
+                width: inherit;
+                height: inherit;
+                line-height: inherit;
+                color: inherit;
+              "
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 200 200"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M180 37.918L162.082 20L100 82.208L37.918 20L20 37.918L82.208 100L20 162.082L37.918 180L100 117.792L162.082 180L180 162.082L117.792 100z"
+              ></path>
+            </svg>
+          </div>
+          <div class="info-block">
+            {{ selected }}
+          </div>
         </div>
-        <div>
-          <svg
-            class="svg-image"
-            role="img"
-            style="
-              width: inherit;
-              height: inherit;
-              line-height: inherit;
-              color: inherit;
-            "
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 200 200"
-          >
-            <path
-              fill-rule="evenodd"
-              clip-rule="evenodd"
-              d="M180 37.918L162.082 20L100 82.208L37.918 20L20 37.918L82.208 100L20 162.082L37.918 180L100 117.792L162.082 180L180 162.082L117.792 100z"
-            ></path>
-          </svg>
+        <div class="more-block">
+          <div class="inner-more-block" *ngFor="let item of moreFilter">
+            <div class="check">
+              <input type="checkbox" name="" id="" />
+            </div>
+            <div class="img-block">
+              <img
+                src="../../assets/img/{{ item.img }}.png"
+                alt="{{ item.img.splice(3) }}"
+              />
+            </div>
+            <div class="text-block">
+              <div class="tooltip">
+                <span class="tooltiptext">{{ item.tooltip }}</span>
+              </div>
+              <div class="text">
+                {{ item.text }}
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
