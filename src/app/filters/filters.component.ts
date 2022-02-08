@@ -10,7 +10,9 @@ export class FiltersComponent implements OnInit {
   public mainFilter: Object[] = mainFilter;
   public moreFilter: Object[] = moreFilter;
   public reset: boolean = false;
-  public selected: string;
+  public notChecked: boolean = true;
+  public checked: boolean = false;
+  public selected: string = '';
 
   constructor() {}
 

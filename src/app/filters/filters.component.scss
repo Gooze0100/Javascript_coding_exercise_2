@@ -1,14 +1,11 @@
 .filter-block {
-  padding: 50px 0;
+  padding: 30px 0;
   width: 590px;
 
   .reset-block {
     display: flex;
     justify-content: space-between;
     margin-bottom: 8px;
-    // white-space: nowrap;
-    // overflow: hidden;
-    // text-overflow: ellipsis;
     align-items: flex-end;
     h3 {
       font-size: 12px;
@@ -52,50 +49,36 @@
   }
   .tooltip {
     position: relative;
-  }
-
-  .tooltip .tooltiptext {
-    display: none;
-    max-width: 360px;
-    width: auto;
-    font-weight: 400;
-    line-height: 20px;
-    font-size: 14px;
-    background-color: #1f282d;
-    color: #f9fafb;
-    box-shadow: 0 3px 6px rgb(25 32 36 / 16%), 0 -1px 4px rgb(25 32 36 / 4%);
-    text-align: center;
-    border-radius: 4px;
-    padding: 16px;
-    position: absolute;
-    z-index: 2;
-    bottom: 120%;
-  }
-
-  .tooltip .tooltiptext::after {
-    content: "";
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    width: 14%;
-    margin-left: -10px;
-    border-width: 5px;
-    border-style: solid;
-    border-color: #1f282d transparent transparent transparent;
-  }
-  .tooltip .tooltiptext::before {
-    content: "";
-    position: absolute;
-    top: 108%;
-    left: 50%;
-    margin-left: -6px;
-    border-width: 6px;
-    border-style: solid;
-    border-color: #1f282d transparent transparent transparent;
-  }
-
-  .tooltip:hover .tooltiptext {
-    display: block;
+    & .tooltiptext {
+      display: none;
+      max-width: 360px;
+      width: auto;
+      font-weight: 400;
+      line-height: 20px;
+      font-size: 14px;
+      background-color: #1f282d;
+      color: #f9fafb;
+      box-shadow: 0 3px 6px rgb(25 32 36 / 16%), 0 -1px 4px rgb(25 32 36 / 4%);
+      text-align: center;
+      border-radius: 4px;
+      padding: 16px;
+      position: absolute;
+      z-index: 2;
+      bottom: 120%;
+    }
+    & .tooltiptext::before {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      margin-left: -11px;
+      border-width: 11px;
+      border-style: solid;
+      border-color: #1f282d transparent transparent transparent;
+    }
+    &:hover .tooltiptext {
+      display: block;
+    }
   }
 
   .img-block {
@@ -108,85 +91,113 @@
     }
   }
 }
+.dropdown-filter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .text {
+    padding-right: 8px;
+  }
+}
+.svg {
+  vertical-align: middle;
+  height: 15px;
+  width: 15px;
+  line-height: 15px;
 
-.more-block {
-  // display: none;
-  background-color: wheat;
-  border-radius: 8px;
-  padding: 12px 16px;
-  .inner-more-block {
-    padding: 8px 16px;
-    margin: 0 -16px;
-    min-width: 250px;
-    max-width: 262px;
-    width: 250px;
-    font-weight: 400;
-    line-height: 20px;
-    transition: 0.2s background-color ease-out;
-    &:hover {
-      background-color: #f3f5f7;
-    }
-    label {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: center;
-      cursor: pointer;
-      .first-block {
+  .svg-image {
+    fill: #192024;
+  }
+}
+.more-dropdown {
+  position: relative;
+  &:hover .more-block {
+    opacity: 1;
+  }
+  .more-block {
+    background-color: wheat;
+    border-radius: 8px;
+    padding: 12px 16px;
+    opacity: 0;
+    z-index: 3;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    transition: 0.1s opacity ease-in 150ms;
+    .inner-more-block {
+      padding: 8px 16px;
+      margin: 0 -16px;
+      min-width: 250px;
+      max-width: 262px;
+      width: 250px;
+      font-weight: 400;
+      line-height: 20px;
+      transition: 0.2s background-color ease-out;
+      &:hover {
+        background-color: #f3f5f7;
+      }
+      label {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        .input-wrapper {
-          position: relative;
+        cursor: pointer;
+        .first-block {
           display: flex;
-          align-items: inherit;
-          justify-content: inherit;
-          border-width: 1px;
-          border-style: solid;
-          border-radius: 4px;
-          background-color: #fff;
-          border-color: #9ba8b0;
-          width: 16px;
-          height: 16px;
-          transition: border 200ms ease-in-out;
-          input {
-            cursor: pointer;
-            margin: 0;
-            opacity: 0;
-            padding: 0;
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            overflow: visible;
-            // width: 14px;
-            // height: 14px;
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: center;
+          .input-wrapper {
+            position: relative;
+            display: flex;
+            align-items: inherit;
+            justify-content: inherit;
+            border-width: 1px;
+            border-style: solid;
+            border-radius: 4px;
+            background-color: #fff;
+            border-color: #9ba8b0;
+            width: 16px;
+            height: 16px;
+            transition: border 200ms ease-in-out;
+            input {
+              cursor: pointer;
+              margin: 0;
+              opacity: 0;
+              padding: 0;
+              position: absolute;
+              width: 100%;
+              height: 100%;
+              overflow: visible;
+              // width: 14px;
+              // height: 14px;
+            }
+          }
+          .img-block {
+            padding-left: 8px;
+            width: 48px;
+            height: 32px;
+            margin-right: 12px;
+            img {
+              width: auto;
+              height: 100%;
+              object-fit: contain;
+            }
+          }
+          .text {
+            text-overflow: ellipsis;
+            overflow: hidden;
+            font-size: 14px;
           }
         }
-        .img-block {
-          padding-left: 8px;
-          width: 48px;
-          height: 32px;
-          margin-right: 12px;
-          img {
-            width: auto;
-            height: 100%;
-            object-fit: contain;
+        .price {
+          line-height: 32px;
+          margin-left: 3px;
+          font-size: 12.8px;
+          color: #5a6872;
+          &:hover {
+            text-decoration: underline;
           }
-        }
-        .text {
-          text-overflow: ellipsis;
-          overflow: hidden;
-          font-size: 14px;
-        }
-      }
-      .price {
-        line-height: 32px;
-        margin-left: 3px;
-        font-size: 12.8px;
-        color: #5a6872;
-        &:hover {
-          text-decoration: underline;
         }
       }
     }
