@@ -9,6 +9,7 @@ import { mainFilter, moreFilter } from './filters.data';
 export class FiltersComponent implements OnInit {
   public mainFilter: Object[] = mainFilter;
   public moreFilter: Object[] = moreFilter;
+  public reset: boolean = false;
   public selected: string;
 
   constructor() {}

@@ -2,7 +2,7 @@ export const mainFilter: Object[] = [
   {
     img: '01_mini_white',
     text: 'Small',
-    tooltip: 192,
+    tooltip: 229,
   },
   {
     img: '02_economy_white',
@@ -21,7 +21,7 @@ export const mainFilter: Object[] = [
   },
   {
     img: '11_van_white',
-    text: 'SUV',
+    text: 'Van',
     tooltip: 483,
   },
 ];
