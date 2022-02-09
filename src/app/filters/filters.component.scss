@@ -109,97 +109,115 @@
     fill: #192024;
   }
 }
-.more-dropdown {
+
+.position {
   position: relative;
-  &:hover .more-block {
-    opacity: 1;
+}
+
+#dropdown {
+  display: none;
+  &:checked + .more-block {
+    display: block;
   }
-  .more-block {
-    background-color: wheat;
-    border-radius: 8px;
-    padding: 12px 16px;
-    opacity: 0;
-    z-index: 3;
-    position: absolute;
-    top: 60px;
-    left: 0;
-    transition: 0.1s opacity ease-in 150ms;
-    .inner-more-block {
-      padding: 8px 16px;
-      margin: 0 -16px;
-      min-width: 250px;
-      max-width: 262px;
-      width: 250px;
-      font-weight: 400;
-      line-height: 20px;
-      transition: 0.2s background-color ease-out;
-      &:hover {
-        background-color: #f3f5f7;
-      }
-      label {
+}
+
+.more-block {
+  display: none;
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 12px 16px;
+  z-index: 3;
+  position: absolute;
+  top: 60px;
+  left: 0;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgb(25 32 36 / 10%), 0 3px 6px rgb(25 32 36 / 4%),
+    0 -3px 6px rgb(25 32 36 / 4%);
+  animation-name: openMoreBox;
+  animation-duration: 1s;
+  .inner-more-block {
+    padding: 8px 16px;
+    margin: 0 -16px;
+    min-width: 250px;
+    max-width: 262px;
+    width: 250px;
+    font-weight: 400;
+    line-height: 20px;
+    transition: 0.2s background-color ease-out;
+    &:hover {
+      background-color: #f3f5f7;
+    }
+    label {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      .first-block {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        cursor: pointer;
-        .first-block {
+        .input-wrapper {
+          position: relative;
           display: flex;
-          flex-direction: row;
-          justify-content: space-between;
-          align-items: center;
-          .input-wrapper {
-            position: relative;
-            display: flex;
-            align-items: inherit;
-            justify-content: inherit;
-            border-width: 1px;
-            border-style: solid;
-            border-radius: 4px;
-            background-color: #fff;
-            border-color: #9ba8b0;
-            width: 16px;
-            height: 16px;
-            transition: border 200ms ease-in-out;
-            input {
-              cursor: pointer;
-              margin: 0;
-              opacity: 0;
-              padding: 0;
-              position: absolute;
-              width: 100%;
-              height: 100%;
-              overflow: visible;
-              // width: 14px;
-              // height: 14px;
-            }
-          }
-          .img-block {
-            padding-left: 8px;
-            width: 48px;
-            height: 32px;
-            margin-right: 12px;
-            img {
-              width: auto;
-              height: 100%;
-              object-fit: contain;
-            }
-          }
-          .text {
-            text-overflow: ellipsis;
-            overflow: hidden;
-            font-size: 14px;
+          align-items: inherit;
+          justify-content: inherit;
+          border-width: 1px;
+          border-style: solid;
+          border-radius: 4px;
+          background-color: #fff;
+          border-color: #9ba8b0;
+          width: 16px;
+          height: 16px;
+          transition: border 200ms ease-in-out;
+          input {
+            cursor: pointer;
+            margin: 0;
+            opacity: 0;
+            padding: 0;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: visible;
+            // width: 14px;
+            // height: 14px;
           }
         }
-        .price {
-          line-height: 32px;
-          margin-left: 3px;
-          font-size: 12.8px;
-          color: #5a6872;
-          &:hover {
-            text-decoration: underline;
+        .img-block {
+          padding-left: 8px;
+          width: 48px;
+          height: 32px;
+          margin-right: 12px;
+          img {
+            width: auto;
+            height: 100%;
+            object-fit: contain;
           }
+        }
+        .text {
+          text-overflow: ellipsis;
+          overflow: hidden;
+          font-size: 14px;
+        }
+      }
+      .price {
+        line-height: 32px;
+        margin-left: 3px;
+        font-size: 12.8px;
+        color: #5a6872;
+        &:hover {
+          text-decoration: underline;
         }
       }
     }
+  }
+}
+@keyframes openMoreBox {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
