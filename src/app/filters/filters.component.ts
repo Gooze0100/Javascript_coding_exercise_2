@@ -10,11 +10,15 @@ export class FiltersComponent implements OnInit {
   public mainFilter: Object[] = mainFilter;
   public moreFilter: Object[] = moreFilter;
   public reset: boolean = false;
-  public notChecked: boolean = true;
   public checked: boolean = false;
+  public box: boolean = false;
   public selected: string = '';
+  public toggle = false;
 
   constructor() {}
+  backgroundRule(job) {
+    this.toggle = !this.toggle;
+  }
 
   ngOnInit(): void {}
 }

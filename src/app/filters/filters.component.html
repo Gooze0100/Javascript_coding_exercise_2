@@ -9,7 +9,13 @@
         <div>All</div>
       </div>
     </div>
-    <div class="inner-main-block tooltip" *ngFor="let item of mainFilter">
+    <!-- [ngClass]="{ 'change-back': box }" -->
+    <div
+      class="inner-main-block tooltip"
+      [ngClass]="{ 'change-back': toggle }"
+      (click)="backgroundRule()"
+      *ngFor="let item of mainFilter"
+    >
       <span class="tooltiptext">${{ item.tooltip }}+</span>
       <div class="img-block">
         <img src="../../assets/img/{{ item.img }}.png" alt="{{ item.text }}" />
@@ -20,13 +26,12 @@
     </div>
     <div class="position" dropdown>
       <label for="dropdown">
-        <div class="inner-main-block">
+        <div class="inner-main-block" id="moreBtn">
           <div class="text-block">
             <div class="dropdown-filter">
-              <label for="ham"></label>
               <div class="text">More</div>
               <div>
-                <div class="svg" *ngIf="notChecked">
+                <div class="svg">
                   <svg
                     class="svg-image"
                     role="img"
@@ -73,7 +78,7 @@
         </div>
       </label>
       <input type="checkbox" id="dropdown" />
-      <div class="more-block" id="moreBlock">
+      <div class="more-block">
         <div class="inner-more-block" *ngFor="let item of moreFilter">
           <label for="{{ item.text }}">
             <div class="first-block">

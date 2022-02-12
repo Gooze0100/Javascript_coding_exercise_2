@@ -107,20 +107,38 @@
 
   .svg-image {
     fill: #192024;
+    transition: 0.3s all ease-out;
   }
+}
+
+.change-back {
+  background-color: #079 !important;
 }
 
 .position {
   position: relative;
-}
+  .backgroundChange {
+    background-color: #363f45;
+    color: #fff;
+    border-color: #363f45;
+    &:hover {
+      background-color: #2c3439;
+      border-color: #2c3439;
+      color: #fff;
+    }
 
+    svg {
+      fill: white;
+      transform: rotateX(180deg);
+    }
+  }
+}
 #dropdown {
   display: none;
   &:checked + .more-block {
     display: block;
   }
 }
-
 .more-block {
   display: none;
   background-color: #fff;
@@ -143,7 +161,7 @@
     width: 250px;
     font-weight: 400;
     line-height: 20px;
-    transition: 0.2s background-color ease-out;
+    transition: 0.3s background-color ease-out;
     &:hover {
       background-color: #f3f5f7;
     }
@@ -186,13 +204,12 @@
           input:checked + svg {
             fill: #079;
           }
-
           svg {
             fill: transparent;
             height: 14px;
             width: 14px;
             min-width: 14px;
-            transition: fill 200ms ease-in-out;
+            transition: fill 0.2s ease-in-out;
           }
         }
         .img-block {
